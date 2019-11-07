@@ -6,7 +6,7 @@ export const eventInputList = ['trafficAccidentInput', 'maintenanceInput']
 // 地标类型集合
 export const tagsList = ['stakeNum', 'serviceArea', 'tollStation', 'trafficHub', 'policeCar', 'trafficAccident', 'maintenance', 'roadinternet'] // "policeUser",
 // 设备类型集合
-export const shebeiList = ['crossdev', 'sensor', 'screenSpeed', 'screenComposite', 'led', 'uav', 'screenMessage', 'screenInduction', 'highHorn', 'camera', 'policeCar']
+export const shebeiList = ['sensor', 'screenSpeed', 'screenComposite', 'led', 'uav', 'screenMessage', 'screenInduction', 'highHorn', 'camera', 'policeCar']
 // 设备、地标集合
 export const devList = [...shebeiList]
 // 集合policeList

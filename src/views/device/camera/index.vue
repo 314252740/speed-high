@@ -57,6 +57,7 @@ import { doDelete } from '@/api/camera'
 import initData from '@/mixins/initData'
 import search from './module/search'
 import eform from './module/form.vue'
+
 import { wensocketFogInfo } from '@/api/accidentMap.js'
 export default {
   mixins: [initData],

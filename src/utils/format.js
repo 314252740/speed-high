@@ -110,3 +110,13 @@ export function timestampToTime (timestamp, type) {
     return h + m + s
   }
 }
+/**
+ *
+ *
+ * @param {*} timestamps 时间戳
+ * @returns yyy-MM-dd mm:HH:ss
+ */
+export function timeTotimestamp (time, type) {
+  let timestamp = new Date(time).getTime()
+  return timestamp
+}

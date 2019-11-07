@@ -408,7 +408,7 @@
   top: 19px;
   left: -15px;
 }
-
+/* --------------------------------------------------------------------------------------------------------------------- */
 /* 位置在上中 */
 .spetopMiddle {
     height: 45px;
@@ -453,44 +453,47 @@
 
 /* 位置在下中 */
 
-.spebottomMiddle {
-  height: 65px;
-  width: 65px;
+.spetopMiddleError {
+  height: 45px;
+  width: 45px;
   background: #000000;
-  border: 3px solid #27831b;
-  border-radius: 8px;
-  line-height: 74px;
+  border: 3px solid #fb411c;
+  border-radius: 3px;
+  line-height: 45px;
   text-align: center;
   position: relative;
+  box-shadow: 1px -3px 13px #8C8C8C;
+  -webkit-box-shadow: 1px -3px 13px #8C8C8C;
   box-shadow: 1px 3px 13px #8C8C8C;
-  -webkit-box-shadow: 1px 3px 13px #8C8C8C;
-  top: 6px;
-  left: -33px;
+  top: -71px;
+  left: -26px;
+  border-radius: 8px;
 }
 
-.spebottomMiddle:before {
+.spetopMiddleError:before {
   content: '';
   width: 0;
   height: 0;
   border-width: 8px 8px 8px 8px;
   border-style: dashed;
-  border-color: transparent transparent #27831b transparent;
   position: absolute;
-  top: -18px;
-  left: 25px;
-}
-
-.spebottomMiddle:after {
+  border-color: #fb411c transparent transparent transparent;
+  bottom: -16px;
+  left: 16px;
+  }
+  
+  .spetopMiddleError:after {
   content: '';
   width: 0;
   height: 0;
   border-width: 8px 8px 8px 8px;
   border-style: dashed;
-  border-color: transparent transparent #000000 transparent;
   position: absolute;
-  top: -13px;
-  left: 25px;
-}
+  border-color: #000 transparent transparent transparent;
+  bottom: -13px;
+  left: 16px;
+  }
+/* --------------------------------------------------------------------------------------------------------------------- */
 
 /* 复合屏 */
 /* 下中 */
@@ -530,14 +533,14 @@
   top: -89px;
   left: -56px;
 }
-
+/* ---------------------------------------------------------------4444------------------------------------------------------------- */
 /* 上中 */
 .comtopMiddle {
   width: 110px;
   position: relative;
   background: #3c7f33;
   border-radius: 8px;
-  border: 3px solid #fb411c;
+  border: 3px solid rgb(28, 167, 40);
   padding: 0 2px;
   bottom: 95px;
   left: -59px;
@@ -568,6 +571,43 @@
   top: 75px;
   left: 48px;
 }
+.comtopMiddleError {
+  width: 110px;
+  position: relative;
+  background: #3c7f33;
+  border-radius: 8px;
+  border: 3px solid #fb411c;
+  padding: 0 2px;
+  bottom: 95px;
+  left: -59px;
+  box-shadow: 1px 3px 13px #8C8C8C;
+  -webkit-box-shadow: 1px 3px 13px #8C8C8C;
+}
+
+.comtopMiddleError:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 8px 8px;
+  border-style: dashed;
+  border-color: rgb(28, 167, 40) transparent transparent transparent;
+  position: absolute;
+  top: 77px;
+  left: 48px;
+}
+
+.comtopMiddleError:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 8px 8px;
+  border-style: dashed;
+  border-color: #fb411c transparent transparent transparent;
+  position: absolute;
+  top: 75px;
+  left: 48px;
+}
+/* ---------------------------------------------------------------4444------------------------------------------------------------- */
 
 /* 左中 */
 .comleftMiddle {
@@ -835,6 +875,7 @@
   top: 0px;
   right: -12px;
 }
+/* -----------------------------------------------------------44444--------------------------------------------------- */
 /* 上中 */
 .infotopMiddle {
   width: 90px;
@@ -873,12 +914,50 @@
   bottom: -15px;
   right: 45px;
 }
+.infotopMiddleError {
+  width: 90px;
+  padding:0px 5px;
+  background: #000;
+  border: 3px solid #fb411c;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 16px;
+  left: -50px;
+  border-radius: 8px;
+  box-shadow: -1px 3px 13px #8C8C8C;
+  -webkit-box-shadow: -1px 3px 13px #8C8C8C;
+}
+
+.infotopMiddleError::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 8px 8px;
+  border-style: dashed;
+  border-color:  #fb411c transparent transparent transparent;
+  position: absolute;
+  bottom: -18px;
+  right: 45px;
+}
+
+.infotopMiddleError::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 8px 8px;
+  border-style: dashed;
+  border-color:#000 transparent transparent  transparent;
+  position: absolute;
+  bottom: -15px;
+  right: 45px;
+}
+/* -----------------------------------------------------------44444--------------------------------------------------- */
 /* --------------------------------------------------------------------------------------------------------------- */
 /* 视屏 */
 /* 下中 */
 .vidbottomMiddle {
-  height: 68px;
-  width: 118px;
+  height: 45px;
+  width: 45px;
   padding: 5px;
   background: #000;
   border: 3px solid #1ca728;
@@ -913,16 +992,16 @@
   top: 0px;
   right: -12px;
 }
+/* -------------------------------------------------------------------------4444444444-------------------------- */
 /* 上中 */
 .vidtopMiddle {
-  height: 68px;
-  width: 118px;
-  padding: 5px;
+  height: 45px;
+  width: 45px;
   background: #000;
   border: 3px solid #1ca728;
   position: absolute;
   bottom: 18px;
-  left: -65px;
+  left: -26px;
   border-radius: 8px;
   text-align: center;
   line-height: 68px;
@@ -939,10 +1018,48 @@
   border-color: #1ca728 transparent transparent transparent ;
   position: absolute;
   bottom: -19px;
-  right: 58px;
+  right: 14px;
+}
+.vidtopMiddle::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 8px 8px;
+  border-style: dashed;
+  border-color: #000 transparent transparent transparent;
+  position: absolute;
+  bottom: -15px;
+  right: 14px;
+}
+/* 上中 */
+.vidtopMiddleError {
+  height: 45px;
+  width: 45px;
+  background: #000;
+  border: 3px solid #fb411c;
+  position: absolute;
+  bottom: 18px;
+  left: -26px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 68px;
+  box-shadow: -1px 3px 13px #8C8C8C;
+  -webkit-box-shadow: -1px 3px 13px #8C8C8C;
 }
 
-.vidtopMiddle::after {
+.vidtopMiddleError::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px 8px 8px 8px;
+  border-style: dashed;
+  border-color: #fb411c transparent transparent transparent ;
+  position: absolute;
+  bottom: -19px;
+  right: 14px;
+}
+
+.vidtopMiddleError::after {
   content: '';
   width: 0;
   height: 0;
@@ -951,8 +1068,10 @@
   border-color: #000 transparent transparent transparent;  
   position: absolute;
   bottom: -15px;
-  right: 58px;
+  right: 14px;
 }
+/* -------------------------------------------------------------------------4444444444-------------------------- */
+
 /* ------------------------------------------------------------------------ */
 .ol-popup {
   padding: 5px 10px;

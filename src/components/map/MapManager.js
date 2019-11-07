@@ -530,8 +530,8 @@ function init(conf) {
   mapData.center = [115.470876,35.255208];
   mapData.zoom = 11;
   // 徐州配置
-  mapData.center = [117.578175,34.079237];
-  mapData.zoom = 15;
+  // mapData.center = [117.578175,34.079237];
+  // mapData.zoom = 15;
   // 如果没有指定maxZoom的值，则赋值为resolutions的长度
   if(!conf || !conf.maxZoom) {
     mapData.maxZoom = mapData.resolutions.length-1;

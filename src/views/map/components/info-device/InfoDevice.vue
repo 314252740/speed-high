@@ -122,12 +122,12 @@
           <div class="control" v-if="rolseShow">
             <div class="title">
               <div class="left">
-                <i class="iconfont" style="color:#fff;">&#xe620;</i>
+                <i class="iconfonts el-icon-setting" style="color:#fff; padding-right:3px"></i>
                 <span class="aroundEquipment">设备控制</span>
               </div>
             </div>
             <ul class="decControl" v-if="decList">
-              <li class="decItem">
+              <!-- <li class="decItem">
                 <div class="decControlBox">
                   <i class="iconfont" style="color:#0887FA;">&#xe607;</i>
                   <span class="decControlTit">设备开关</span>
@@ -139,7 +139,7 @@
                     @change="decSwitch()"
                   ></el-switch>
                 </div>
-              </li>
+              </li> -->
               <li class="decItem" v-if="resetControl">
                 <div class="decControlBox">
                   <i class="iconfont" style="color:#0887FA;">&#xe605;</i>
@@ -152,7 +152,7 @@
               </li>
               <li class="decItem" v-if="modify">
                 <div class="clearfix">
-                  <i class="iconfont" style="color:#0887FA;">&#xe605;</i>
+                  <i class="el-icon-setting" style="color:#0887FA; padding-right:3px"></i>
                   <span class="decControlTit">设备控制</span>
                 </div>
                 <div class="controlDec" v-if="notScreenComposite">

@@ -4,6 +4,7 @@
       <div class="mapCont" ref="dialogMap">
         <tile-map  ref="map"></tile-map>
         <el-button :type="type" :icon="icon" circle class="button" @click.stop="trigger" :title="status"></el-button>
+        <el-button :type="type2" :icon="icon" circle class="button2" @click.stop="trigger2" :title="status2"></el-button>
       </div>
       <div class="mapCont mapConts" ref=dialogForm>
         <el-form ref="form" :model="dataForm" :rules="rules" size="small" label-position="right" label-width="100px" >
@@ -94,6 +95,14 @@
             </el-col>
           </el-row>
 
+          <el-form-item label="关联摄像机" prop="cameraIps" label-width="97px">
+            <el-input v-model="dataForm.cameraIps" type="textarea" :disabled="true" autocomplete="off" ></el-input>
+          </el-form-item>
+
+          <!--不可删除-->
+          <el-form-item label="关联摄像机标记" style="display:none" prop="sign">
+              <el-input v-model="dataForm.sign" required="true" minlength="6" maxlength="20"  autocomplete="off" ></el-input>
+          </el-form-item>
         </el-form>
       </div>
     </div>
@@ -124,6 +133,8 @@ export default {
       status: "显示",
       type: "success",
       icon: "el-icon-view",
+      status2: "显示",
+      type2: "danger",
       //道路信息 选择
       // options: [],
       statusOptions:[{
@@ -224,6 +235,30 @@ export default {
         this.status = "桩号隐藏中"
         this.$refs.map.showLayer("stakeNum",false)
       }
+    },
+    trigger2 () {
+      if (this.type2 === "danger") {
+        this.type2 = "success"
+        this.status2 = "摄像机显示中"
+        this.$refs.map.showLayer("camera", true)
+      } else {
+        this.type2 = "danger"
+        this.status2 = "摄像机隐藏中"
+        this.$refs.map.showLayer("camera", false)
+      }
+      // 绘制选择摄像机
+      let that = this
+      this.$refs.map.startDrawWithSelCamera(function (cameras) {
+        // 框选的摄像机信息列表
+        let cameraIds = [], cameraIps = []
+        cameras.forEach(item => {
+          cameraIds.push(item.id)
+          cameraIps.push(item.ip)
+        })
+        that.dataForm.sign = "关联摄像机标记"
+        that.dataForm.cameraIds = cameraIds.join(",")
+        that.dataForm.cameraIps = cameraIps.join(" ")
+      })
     },
      hide() {
       this.$refs.map.cleanLayer("stakeNum");
@@ -328,8 +363,11 @@ export default {
         // 重新加载地图
         this.$refs.map.resetMap();
         this.$refs.map.addLayer("stakeNum");
+        this.$refs.map.addLayer("camera")
         this.status = "桩号显示中"
         this.type = "success"
+        this.type2 = "danger"
+        this.status2 = "摄像机隐藏中"
       })
     }
   }
@@ -355,5 +393,10 @@ export default {
   position: absolute;
   right: 6px;
   bottom: 6px;
+}
+.button2{
+  position: absolute;
+  right: 6px;
+  bottom: 40px;
 }
 </style>

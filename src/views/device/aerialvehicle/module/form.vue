@@ -276,9 +276,9 @@ export default {
    
   },
   computed: {
-    ...mapGetters(["roadList"]),
+    ...mapGetters(["areaList"]),
     options () {
-      return this.roadList
+      return this.areaList
     }
   },
   methods: {

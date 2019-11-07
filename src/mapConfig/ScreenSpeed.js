@@ -4,21 +4,19 @@ let defaultObj = {
   'container': null, // 团雾容器
   'limitValue': 120, // 传入的复合屏的实时数据
   'verDirection': 'topMiddle',
-  'id': 'id',
-  'state': 'normal',
   'directionStyle': ['speleftTop', 'sperightTop', 'speleftBottom', 'sperightBottom', 'speleftMiddle', 'sperightMiddle', 'spetopMiddle', 'spebottomMiddle']
 }
 export default {
   constructor (screen) {
     defaultObj = Object.assign(defaultObj, screen)
-    return this.createdUI_(screen)
+    return this.createdUI_(defaultObj)
   },
   changeValue (callback) {
     if (callback) {
       callback_ = callback
     }
   },
-  createdUI_ (screen) {
+  createdUI_ (defaultObj) {
     // callback_(screen)
     let speedScreen = document.createElement('div')
     speedScreen.style.cssText = `
@@ -28,22 +26,12 @@ export default {
       user-select: none;
     `
     speedScreen.innerHTML = `
-      <span class="speedScreen">${screen.limitValue}</span>  
+      <span class="speedScreen">${defaultObj.limitValue}</span>  
       <span class="tri"></span>
     `
     // 挂载元素位置
     if (defaultObj.container) {
       defaultObj.container.appendChild(speedScreen)
-    }
-    // 信息屏状态
-    if (defaultObj.state !== 'normal') {
-      speedScreen.style.cssText = `
-        border: 3px solid #fb5a5a;
-      `
-    } else {
-      speedScreen.style.cssText = `
-        border: 3px solid #1ca728;
-      `
     }
     // 提示框的位置
     switch (defaultObj.verDirection) {
@@ -64,6 +52,11 @@ export default {
       case 'bottomMiddle' : speedScreen.className = 'spebottomMiddle'
         break
       default : speedScreen.className = 'topMiddle'
+    }
+    // 信息屏状态
+    if (defaultObj.networkStatus !== 0) {
+      speedScreen.classList.add('spetopMiddleError')
+      speedScreen.classList.remove('spetopMiddle')
     }
     return speedScreen
   }

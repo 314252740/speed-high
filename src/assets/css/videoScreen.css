@@ -10,3 +10,35 @@
   margin: auto;
   cursor: pointer;
 }
+.videoTitleSc{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 640px;
+  height: 33px;
+  line-height: 33px;
+  background: #3596ed;
+}
+.videoNameSc{
+  float: left;
+  font-size: 16px;
+  color: #fff;
+  padding-left: 5px;
+}
+.videoCloseSc{
+  float: right;
+  font-size: 20px;
+  color: #fff;
+  padding-right: 5px;
+  line-height: 33px;
+  cursor: pointer;
+}
+.videoCloseSc:hover{
+  color: #fb5a5a;
+  transition: all .3s;
+}
+.videoDiv{
+  z-index: 1000;
+  position: absolute;
+  left: -240px;
+  top: 90px;
+}

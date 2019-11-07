@@ -15,29 +15,32 @@
           <i class="el-icon-close float_right" @click="hide"></i>
         </p>
         <div class="content" style="padding-bottom:5px;">
-          <el-carousel height="157px" class="swiper">
+          <el-carousel height="157px" class="swiper" :interval="5000" @change="updataTime">
             <el-carousel-item v-for="(item,index) in sensorsInfoList" :key="index" class="swiperBox">
               <h3 class="small">
-                <span class="itemName">更新时间:</span>
-                <span>{{item.modifyTime}}</span>
+                <span class="itemName">更新时间<i class="justify"></i></span>
+                <span v-if="timeTotimestamp(item.modifyTime) < timeTotimestamp(time)" style="color:red">{{item.modifyTime}}</span>
+                <span v-else>{{item.modifyTime}}</span>
               </h3>
               <h3 class="small">
-                <span class="itemName">位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置:</span>
+                <span class="itemName">位置<i class="justify"></i></span>
                 <!-- <el-tooltip class="item" effect="dark" :content="item.roadCode" placement="top"> -->
                 <span class="hidden_one">{{ item.name }}</span>
                 <!-- </el-tooltip> -->
               </h3>
               <h3 class="small">
-                <span class="itemName">能&nbsp;&nbsp;见&nbsp;&nbsp;度:</span>
-                <span>{{ item.visibility }}&nbsp;米</span>
+                <span class="itemName">能见度<i class="justify"></i></span>
+                <span v-if="item.visibility < 2000" style="color:red">{{ item.visibility }}&nbsp;米</span>
+                <span v-else>{{ item.visibility }}&nbsp;米</span>
               </h3>
               <h3 class="small">
-                <span class="itemName">路面状况:</span>
+                <span class="itemName">路面状况<i class="justify"></i></span>
                 <span>{{ item.roadCondition }}</span>
               </h3>
               <h3 class="small">
-                <span class="itemName">限&nbsp;&nbsp;速&nbsp;&nbsp;值:</span>
-                <span>{{ item.speed }}公里/小时</span>
+                <span class="itemName">限速值<i class="justify"></i></span>
+                <span v-if="item.speed < 2000">{{ item.speed }}公里/小时</span>
+                <span v-else>{{ item.speed }}公里/小时</span>
               </h3>
             </el-carousel-item>
           </el-carousel>
@@ -65,7 +68,7 @@
         </li>
       </el-popover>
       <!-- 报警信息 -->
-      <el-popover
+      <!-- <el-popover
         popper-class="bar_popover"
         placement="bottom-start"
         v-model="alarmMessage"
@@ -84,15 +87,6 @@
               <span v-else class="conMsg">{{ item.list.batteryVoltage.info}}</span>
 
               <span class="msgName">更新时间：<span class="empty"></span></span><span class="conMsg">{{ item.list.createTime.info}}</span>
-              <!-- <span class="msgName">电池电压</span><span v-if="alarmLed(key, item.list.batteryVoltage.info)" class="conMsg">{{ item.list.batteryVoltage.info}}</span>
-              <span class="msgName">电池电压</span><span v-else class="conMsg">{{ item.list.batteryVoltage.info}}</span> -->
-
-              <!-- <span class="msgName" v-if="alarmLed(key, item.list.batteryVoltage.info)" style="color:red;">{{item.list.code.info}}(异常)</span>
-              <span class="itemstyle itemInfos" v-else>{{item.list.batteryVoltage.info}}</span>
-               <span :key="key" v-for="(itemList, key) in item.list" class="msgBox">
-                <span class="msgName">{{itemList.name}}</span>
-                <span class="itemstyle itemInfos" v-if="alarmLed(key, itemList.info)" style="color:red;">{{itemList.info}}(异常)</span>
-                <span class="itemstyle itemInfos" v-else>{{itemList.info}}</span> -->
             </li><br>
           </ul>
           <ul>
@@ -101,10 +95,6 @@
               <span class="msgName">设备编号：</span><span class="conMsg">{{ item.address}}</span>
               <span class="msgName">能&nbsp;&nbsp;见&nbsp;&nbsp;度：</span><span style="color:red;" class="conMsg">{{ item.minuteVis}}米</span>
               <span class="msgName">更新时间：<span class="empty"></span></span><span class="conMsg">{{ item.createTime}}</span>
-              <!-- <span class="msgName">电池电压：</span><span class="conMsg">{{ item.batteryVoltage }}</span>
-              <span class="msgName">CPU温度：</span><span class="conMsg">{{ item.cpuTemperature }}</span>
-              <span class="msgName">主控电压：</span><span class="conMsg">{{ item.powerVoltage }}</span>
-              <span class="msgName">创建时间：</span><span class="conMsg">{{ item.createTime }}</span> -->
             </li>
           </ul>
         </div>
@@ -116,30 +106,30 @@
             <img class="itemImg" src="../../../../assets/img/mapImg/info-bar//baojing.png" alt="设备故障信息" title="设备故障信息">
           </li>
         </el-badge>
-      </el-popover>
+      </el-popover> -->
     </ul>
-    <audio muted id="audio" style="display:none" :src="audioSrc"/>
-    <!-- <iframe allow="autoplay" id="audio" style="display:none" src="/static/audio/8858.wav"></iframe> -->
+    <!-- <audio muted id="audio" style="display:none" :src="audioSrc"/> -->
   </div>
 </template>
 
 <script>
 // 库
 import { Message } from 'element-ui'
+import { isJSON, timestampToTime } from '@/utils/format'
 // API
 import { getSensorsInfos } from '@/api/sensor.js'
-import { isJSON, timestampToTime } from '@/utils/format'
 import scheduling from './components/Scheduling' //  排班表弹框
 import { formatLed, LampLists } from '../../config/search'
 // 报警内容websocket
-import WebSocketWrapper from '@/components/map/mapWebsocket'
-import SID from '@/components/map/WebSocketSID'
+// import WebSocketWrapper from '@/components/map/mapWebsocket'
+// import SID from '@/components/map/WebSocketSID'
 export default {
   components: {
     scheduling
   },
   data () {
     return {
+      time: null,
       audio: null,
       audioSrc: require('../../../../assets/audio/8858.wav'),
       checked: false,
@@ -197,17 +187,15 @@ export default {
     }
   },
   methods: {
+    timeTotimestamp (time, type) {
+      let timestamp = new Date(time).getTime()
+      return timestamp
+    },
+    // 更新时间
+    updataTime () {
+      this.time = new Date()
+    },
     // 语音播放
-    // aplayAudio (type) {
-    //   if (!this.audio) {
-    //     return
-    //   }
-    //   if (type) {
-    //     this.audio.play()
-    //   } else {
-    //     this.audio.pause()
-    //   }
-    // },
     playAudio () {
       // this.audio.play()
       this.audio.play()
@@ -371,10 +359,10 @@ export default {
     this.audio = document.getElementById('audio')
     // 报警数据(LED电池电压)
     // eslint-disable-next-line no-new
-    new WebSocketWrapper({ sid: SID.LED_BATTERY, onmessage: this.websocketonmessage, onerror: this.websocketonerror, onclose: this.websocketonclose })
-    // 报警数据(能见度)
-    // eslint-disable-next-line no-new
-    new WebSocketWrapper({ sid: SID.SENSOR_VISIBILITY, onmessage: this.websocketvisibility, onerror: this.websocketonerror, onclose: this.websocketonclose })
+    // new WebSocketWrapper({ sid: SID.LED_BATTERY, onmessage: this.websocketonmessage, onerror: this.websocketonerror, onclose: this.websocketonclose })
+    // // 报警数据(能见度)
+    // // eslint-disable-next-line no-new
+    // new WebSocketWrapper({ sid: SID.SENSOR_VISIBILITY, onmessage: this.websocketvisibility, onerror: this.websocketonerror, onclose: this.websocketonclose })
   }
 }
 </script>
@@ -486,6 +474,12 @@ export default {
   height: 32px;
   color: #198bee;
   font-weight: 100;
+  text-align: justify;
+  width: 70px;
+}
+.justify{
+  display:inline-block;
+  width:100%;
 }
 .float_right{
   float: right;

@@ -8,8 +8,6 @@ let defaultObj = {
   'container': null,
   'data': { visibility: { name: '能见度', detail: '' }, roadCond: { name: '路面状况', detail: '' }, weatherCond: { name: '天气状况', detail: '' } }, // 传入的复合屏的实时数据,
   'verDirection': 'topMiddle',
-  'id': 'id',
-  'state': 'normal',
   'directionStyle': ['comleftTop', 'comrightTop', 'comleftBottom', 'comrightBottom', 'comleftMiddle', 'comtopMiddle', 'comrightMiddle', 'combottomMiddle']
 }
 export default {
@@ -28,14 +26,14 @@ export default {
         this[key] = defaultObj[key]
       }
     }
-    return this.createdUI_(screen)
+    return this.createdUI_(defaultObj)
   },
   changeValue (callback) {
     if (callback) {
       callback_ = callback
     }
   },
-  createdUI_ (screen) {
+  createdUI_ (defaultObj) {
     // 容器className
     // callback_(defaultObj)
     let compositeScreenDom = document.createElement('div')
@@ -49,16 +47,6 @@ export default {
     // 挂载元素位置
     if (defaultObj.container) {
       defaultObj.container.appendChild(compositeScreenDom)
-    }
-    // 显示屏状态
-    if (defaultObj.state !== 'normal') {
-      compositeScreenDom.style.cssText = `
-        border: 3px solid #fb5a5a;
-      `
-    } else {
-      compositeScreenDom.style.cssText = `
-        border: 3px solid #1ca728;
-      `
     }
     // 提示框的位置
     switch (defaultObj.verDirection) {
@@ -104,6 +92,11 @@ export default {
         <div class="empty"></div>
       `
       screenContent.appendChild(screenItem)
+    }
+    // 显示屏状态
+    if (defaultObj.networkStatus !== 0) {
+      compositeScreenDom.classList.add('comtopMiddleError')
+      compositeScreenDom.classList.remove('comtopMiddle')
     }
     return compositeScreenDom
   }

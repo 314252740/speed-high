@@ -153,9 +153,9 @@ export default {
     tileMap
   },
   computed: {
-    ...mapGetters(["roadList"]),
+    ...mapGetters(["areaList"]),
     lists () {
-      return this.roadList
+      return this.areaList
     }
   },
   data () {

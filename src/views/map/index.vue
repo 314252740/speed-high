@@ -402,7 +402,7 @@ export default {
             } else {
               that.videoList = arr
             }
-          }, 1000 * 10)// this.videoTime
+          }, 1000 * 15)// this.videoTime
         }
       }
     },
