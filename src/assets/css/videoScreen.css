@@ -1,0 +1,12 @@
+
+.videoImg{
+  height: 27px;
+  width: 27px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  cursor: pointer;
+}

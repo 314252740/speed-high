@@ -1,0 +1,191 @@
+{
+  "id": "1212018",
+  "name": "道路应急管理",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "376364",
+      "name": "设置",
+      "font_class": "set",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "554516",
+      "name": "温度计",
+      "font_class": "iconset0480",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "563721",
+      "name": "说明",
+      "font_class": "shuoming",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "741948",
+      "name": "退出 (4)",
+      "font_class": "tuichu4",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "936756",
+      "name": "眼睛",
+      "font_class": "yanjing",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "1183013",
+      "name": "详情",
+      "font_class": "xiangqing",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "1287721",
+      "name": "叉叉",
+      "font_class": "chacha",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "1314587",
+      "name": "声音",
+      "font_class": "shengyin",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "2229267",
+      "name": "模式切换",
+      "font_class": "exchange",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "2678587",
+      "name": "地球",
+      "font_class": "diqiu",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "3216047",
+      "name": "定位",
+      "font_class": "icon--",
+      "unicode": "e70a",
+      "unicode_decimal": 59146
+    },
+    {
+      "icon_id": "5147491",
+      "name": "温度",
+      "font_class": "app_icons--",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "5244556",
+      "name": "笔",
+      "font_class": "bi",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "5387689",
+      "name": "地点定位",
+      "font_class": "didiandingwei",
+      "unicode": "eb31",
+      "unicode_decimal": 60209
+    },
+    {
+      "icon_id": "6582276",
+      "name": "天气2",
+      "font_class": "tianqi1",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "6716497",
+      "name": "交通灯-填充",
+      "font_class": "traffic-lights-fill",
+      "unicode": "e813",
+      "unicode_decimal": 59411
+    },
+    {
+      "icon_id": "6762078",
+      "name": "定位",
+      "font_class": "dingwei",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "6856143",
+      "name": "频率",
+      "font_class": "pinshuai1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6897699",
+      "name": "雾",
+      "font_class": "wu",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "8428645",
+      "name": "定位",
+      "font_class": "dingwei2",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "8659511",
+      "name": "菜单",
+      "font_class": "caidan-tianchong",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "9402953",
+      "name": "聚焦",
+      "font_class": "changyongicon-",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "10447175",
+      "name": "交通事故",
+      "font_class": "jiaotongshigu",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "10468205",
+      "name": "夜间",
+      "font_class": "yejian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10999128",
+      "name": "亮度",
+      "font_class": "liangdu",
+      "unicode": "e7af",
+      "unicode_decimal": 59311
+    },
+    {
+      "icon_id": "11200116",
+      "name": "施工",
+      "font_class": "construction",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    }
+  ]
+}

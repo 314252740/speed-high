@@ -1,0 +1,168 @@
+.fogCon{
+  position: relative;
+}
+/* .criFog{
+  height: 60px;
+  width: 60px;
+  border:1px solid #fb5a5a;
+  background: rgba(255,255,255,.5);
+  border-radius: 50%;
+} */
+.criBig{
+  height: 160px;
+  width: 160px;
+  background: rgba(73,137,194,.2);
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+}
+/* 交通事故 */
+.criTraffic{
+  height: 40px;
+  width: 40px;
+  background:#fd0505 ;
+  border:6px solid #f97d7d;
+  border-radius: 50%;
+}
+/* 施工养护 */
+.criConstruction{
+  height: 40px;
+  width: 40px;
+  background:#fd0505 ;
+  border:6px solid #f6af7a;
+  border-radius: 50%;
+}
+.tooltip{
+  /* min-width: 110px; */
+  _width:110px;
+  font-weight: 600;
+  height: 32px;
+  padding:5px 0px;
+  color: #fb5a5a;
+  text-align: center;
+  font-size: 16px;
+  white-space:nowrap;
+  vertical-align: middle;
+  transition: all .5s;
+  line-height: 32px;
+  overflow: hidden;
+}
+.hideOrShowToolTip{
+  width: 110px!important;
+  height: 0px!important;
+  padding: 0px!important;
+  overflow: hidden!important;
+  transition: all .5s;
+}
+.tipImg{
+  vertical-align: sub;
+}
+.accidentTit{
+  vertical-align: middle;
+}
+.upProject{
+  width:168px;
+  height: 178px;
+  overflow: hidden;
+  transition: all .5s;
+}
+.proTit{
+  width: 168px;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 0 7px 0;
+}
+.propage{
+  width: 168px;
+  font-size: 14px;
+  line-height: 24px;
+}
+.btn{
+  margin:0;
+  margin-top: 10px;
+  width: 100%;
+  color:#fb5a5a;
+  font-size: 14px;
+  border:1px solid #fb5a5a;
+  border-radius: 5px;
+  height: 32px;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: all .3s;
+}
+.btn:hover{
+  background: #fb5a5a;
+  color: #fff;
+  transition: all .3s;
+}
+.active{
+  background: #fb5a5a;
+  color: #fff;
+  transition: all .3s;
+}
+.disactive{
+  background: #fff;
+  color: #fb5a5a;
+  transition: all .3s;
+}
+
+/* 三角形 右下 */
+.fogCon .criDom{
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  right: -17px;
+  bottom: -1px;
+}
+.fogCon .criDom .criBefore{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 0 0 17px;
+  border-color: transparent transparent transparent #ff0000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.fogCon .criDom .criAfter{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 0 16px;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  left: -1px;
+  top: 0px;
+}
+
+/* 三角形 右上 */
+/* .fogCon .criDom{
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  right: -17px;
+  top: -1px;
+}
+.fogCon .criDom .criBefore{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 17px 0 0;
+  border-color: transparent transparent transparent #ff0000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.fogCon .criDom .criAfter{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 16px 0 0;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  left: -1px;
+  top: 0px;
+} */

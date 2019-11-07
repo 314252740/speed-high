@@ -1,0 +1,15 @@
+.info_item{
+    height: 26px;
+    width: 100%;
+    color:#edb82c;
+    background: #000;
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 600;
+    text-align: justify;
+    list-style: none;
+}
+.empty{
+    display: inline-block /* Opera */; 
+    padding-left: 100%; 
+}

@@ -1,0 +1,118 @@
+.screen_list{
+    width: 100%;
+}
+.list_item{
+    height: 18px;
+    width: 100%;
+    border-top:1px solid #bcd3b8;
+    color:#fff;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 600;
+    text-align: justify;
+}
+.empty{
+    display: inline-block /* Opera */; 
+    padding-left: 100%; 
+}
+.list_tit{
+  border:0;
+}
+.item_name{
+    display: inline-block;
+    height: 100%;
+    width: 64px;
+}
+.item_detail{
+    display: inline-block;
+    height: 100%;
+    width: 30px;
+    background: #645f56;
+    color:#fb411c;
+    margin-left: 5px;
+}
+.item{
+    float:left;
+}
+.heightColor{
+    border:3px solid #fb411c;
+}
+.heightColor::before{
+    border-color: transparent transparent #fb411c transparent;
+}
+
+.screens{
+  width: 110px;
+  position: relative;
+  background: #3c7f33;
+  border-radius: 3px;
+  border:3px solid #fb411c;
+  padding:2px;
+}
+
+.screens:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width:8px 8px 8px 8px;
+    border-style:dashed;
+    border-color: transparent transparent #fb411c transparent;
+    position: absolute;
+    top: -18px;
+    left: 48px;
+  }
+
+.screens:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-width:8px 8px 8px 8px;
+  border-style:dashed;
+  border-color:  transparent transparent #3c7f33 transparent;
+  position: absolute;
+  top: -14px;
+  left: 48px;
+} 
+.screen_list{
+  width: 100%;
+}
+.list_item{
+  height: 18px;
+  width: 100%;
+  border-top:1px solid #bcd3b8;
+  color:#fff;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  text-align: justify;
+}
+.empty{
+  display: inline-block /* Opera */; 
+  padding-left: 100%; 
+}
+.list_tit{
+  border:0;
+}
+.item_name{
+  display: inline-block;
+  height: 100%;
+  width: 64px;
+}
+.item_detail{
+  display: inline-block;
+  height: 100%;
+  width: 30px;
+  background: #645f56;
+  color:#fb411c;
+  margin-left: 5px;
+  padding:0 3px;
+}
+.item{
+  float:left;
+}
+.heightColor{
+  border:3px solid #fb411c;
+}
+.heightColor::before{
+  border-color: transparent transparent #fb411c transparent;
+}
